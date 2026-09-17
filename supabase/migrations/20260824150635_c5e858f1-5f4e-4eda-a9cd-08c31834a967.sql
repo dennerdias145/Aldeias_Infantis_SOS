@@ -1,0 +1,12 @@
+REVOKE ALL ON FUNCTION public.award_points(uuid, text, uuid, text) FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.notify(uuid, text, text, text, text) FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.normalize_txt(text) FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.update_updated_at_column() FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.bootstrap_profile() FROM PUBLIC, anon;
+REVOKE ALL ON FUNCTION public.residence_available(text, text, text, text, text) FROM PUBLIC;
+REVOKE ALL ON FUNCTION public.has_role(uuid, public.app_role) FROM PUBLIC, anon;
+REVOKE ALL ON FUNCTION public.is_admin() FROM PUBLIC, anon;
+GRANT EXECUTE ON FUNCTION public.bootstrap_profile() TO authenticated;
+GRANT EXECUTE ON FUNCTION public.residence_available(text, text, text, text, text) TO anon, authenticated;
+GRANT EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) TO authenticated;
+GRANT EXECUTE ON FUNCTION public.is_admin() TO authenticated;

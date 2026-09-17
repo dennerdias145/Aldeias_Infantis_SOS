@@ -1,0 +1,10 @@
+REVOKE ALL ON FUNCTION public.has_staff_role(uuid, public.staff_role) FROM public, anon;
+REVOKE ALL ON FUNCTION public.is_staff_admin() FROM public, anon;
+REVOKE ALL ON FUNCTION public.is_staff_wide() FROM public, anon;
+REVOKE ALL ON FUNCTION public.is_staff() FROM public, anon;
+REVOKE ALL ON FUNCTION public.can_access_family(uuid) FROM public, anon;
+GRANT EXECUTE ON FUNCTION public.has_staff_role(uuid, public.staff_role) TO authenticated;
+GRANT EXECUTE ON FUNCTION public.is_staff_admin() TO authenticated;
+GRANT EXECUTE ON FUNCTION public.is_staff_wide() TO authenticated;
+GRANT EXECUTE ON FUNCTION public.is_staff() TO authenticated;
+GRANT EXECUTE ON FUNCTION public.can_access_family(uuid) TO authenticated;
